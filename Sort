@@ -1,0 +1,69 @@
+use taskdb
+switched to db taskdb
+db.taskcollection.insertMany([{rollno:"83",dept:"ece",mark:"85"},{rollno:"86",dept:"eee",mark:"97"},{rollno:"89",dept:"cse",mark:"87"}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("649325b7ac949b0a44f111aa"),
+    '1': ObjectId("649325b7ac949b0a44f111ab"),
+    '2': ObjectId("649325b7ac949b0a44f111ac")
+  }
+}
+db.taskcollection.find()
+{
+  _id: ObjectId("649325b7ac949b0a44f111aa"),
+  rollno: '83',
+  dept: 'ece',
+  mark: '85'
+}
+{
+  _id: ObjectId("649325b7ac949b0a44f111ab"),
+  rollno: '86',
+  dept: 'eee',
+  mark: '97'
+}
+{
+  _id: ObjectId("649325b7ac949b0a44f111ac"),
+  rollno: '89',
+  dept: 'cse',
+  mark: '87'
+}
+db.taskcollection.find().sort({rollno:1});
+{
+  _id: ObjectId("649325b7ac949b0a44f111aa"),
+  rollno: '83',
+  dept: 'ece',
+  mark: '85'
+}
+{
+  _id: ObjectId("649325b7ac949b0a44f111ab"),
+  rollno: '86',
+  dept: 'eee',
+  mark: '97'
+}
+{
+  _id: ObjectId("649325b7ac949b0a44f111ac"),
+  rollno: '89',
+  dept: 'cse',
+  mark: '87'
+}
+db.taskcollection.find().sort({dept:-1});
+{
+  _id: ObjectId("649325b7ac949b0a44f111ab"),
+  rollno: '86',
+  dept: 'eee',
+  mark: '97'
+}
+{
+  _id: ObjectId("649325b7ac949b0a44f111aa"),
+  rollno: '83',
+  dept: 'ece',
+  mark: '85'
+}
+{
+  _id: ObjectId("649325b7ac949b0a44f111ac"),
+  rollno: '89',
+  dept: 'cse',
+  mark: '87'
+}
+taskdb
